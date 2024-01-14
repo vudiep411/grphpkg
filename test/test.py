@@ -10,12 +10,22 @@ sys.path.append(project_path)
 from graph.graph import Graph
 
 matrix_representation = [
-    [0, 1, 1, 0],
-    [1, 0, 0, 1],
-    [1, 0, 0, 1],
-    [0, 1, 1, 0]
+    [0, 1, 0, 1, 0, 0, 0, 0, 1],
+    [1, 0, 1, 0, 0, 1, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0, 1, 0, 0],
+    [1, 0, 0, 0, 1, 0, 0, 1, 0],
+    [0, 0, 0, 1, 0, 1, 0, 0, 0],
+    [0, 1, 0, 0, 1, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0, 1, 0, 1, 0],
+    [0, 0, 0, 1, 0, 0, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 1, 0]
 ]
 
 g = Graph(matrix_representation)
 g.print_graph()
-g.dfs(0, lambda x: print(x))
+g.dfs(0, lambda x: print(str(x)+" ", end=""))
+g.draw_graph()
+
+# adj_list_representation = [[1, 2]]
+# g2 = Graph(adj_list_representation, adj_list=True)
+# g2.draw_graph()
