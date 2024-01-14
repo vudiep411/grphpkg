@@ -1,14 +1,16 @@
 from __future__ import absolute_import
-from collections import defaultdict
+from collections import defaultdict, deque
+import networkx as nx
+import matplotlib.pyplot as plt
 
 class Graph:
-    def __init__(self, representation):
-        self.graph = defaultdict(list)
-        self.__construct_graph(representation)
+    def __init__(self, representation, adj_list=False):
+        self.graph = defaultdict(set)
+        self.__construct_graph(representation, adj_list)
     
-    def __construct_graph(self, representation):
+    def __construct_graph(self, representation, adj_list):
         if isinstance(representation, list):
-            if isinstance(representation[0], list):
+            if not adj_list:
                 # Adjacency Matrix
                 self.__construct_graph_from_matrix(representation)
             else:
@@ -32,23 +34,24 @@ class Graph:
                 self.add_edge(u, v)
 
     def add_edge(self, u, v):
-        self.graph[u].append(v)
+        self.graph[u].add(v)
+        self.graph[v].add(u)  # Make the graph bidirectional
 
     def print_graph(self):
         for k, v in self.graph.items():
-            print(f"{k} -> {v}")
+            print(f"{k} -> {list(v)}")
 
     def bfs(self, start, callback):
         """Perform BFS and callback operation on each node
 
         * start: Starting node
-        * callback: Your custom function to perform your operation 
+        * callback: Your custom function to perform your operation
         on each node
         """
         visited = set()
-        queue = [start]
+        queue = deque([start])
         while queue:
-            vertex = queue.pop(0)
+            vertex = queue.popleft()
             if vertex not in visited:
                 callback(vertex)
                 visited.add(vertex)
@@ -71,4 +74,17 @@ class Graph:
 
         dfs_recursive(start)
 
-    
+    def draw_graph(self):
+        """Draw the graph for visualization
+        """
+        G = nx.Graph(self.graph)
+        # Set positions for the nodes
+        pos = nx.spring_layout(G)
+        # Draw nodes
+        nx.draw_networkx_nodes(G, pos, node_size=700)
+        # Draw edges
+        nx.draw_networkx_edges(G, pos)
+        # Draw labels
+        nx.draw_networkx_labels(G, pos, font_size=10, font_family="sans-serif")
+        # Display the graph
+        plt.show()
