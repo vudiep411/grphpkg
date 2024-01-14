@@ -10,7 +10,7 @@ DESCRIPTION = 'Graph package'
 setup(
     name="grphpkg",
     version=VERSION,
-    author="NeuralNine (Florian Dedov)",
+    author="Vu Diep",
     author_email="vudiep411@gmail.com",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
