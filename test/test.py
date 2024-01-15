@@ -7,8 +7,8 @@ current_path = os.path.abspath(os.path.dirname(__file__))
 project_path = os.path.abspath(os.path.join(current_path, '..'))
 sys.path.append(project_path)
 
-from graph.graph import Graph
-from graph.weighted_graph import WeightedGraph
+from grphpkg.graph import Graph
+from grphpkg.weighted_graph import WeightedGraph
 
 matrix_representation = [
     [0, 1, 0, 1, 0, 0, 0, 0, 1],
