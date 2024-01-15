@@ -3,7 +3,7 @@ import codecs
 import os
 import sys
 
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 DESCRIPTION = 'Graph package'
 
 with open("README.md", "r") as f:
