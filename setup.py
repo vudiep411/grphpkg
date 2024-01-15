@@ -1,10 +1,13 @@
 from setuptools import setup, find_packages
+import codecs
+import os
+import sys
 
 VERSION = '0.0.3'
 DESCRIPTION = 'Graph package'
-LONG_DESCRIPTION = """
- grphpkg is a simple graph library that has DFS and BFS
- implemented that you can create your own operation."""
+
+with open("README.md", "r") as f:
+    readme = f.read()
 
 # Setting up
 setup(
@@ -13,7 +16,7 @@ setup(
     author="Vu Diep",
     author_email="vudiep411@gmail.com",
     description=DESCRIPTION,
-    long_description=LONG_DESCRIPTION,
+    long_description=readme,
     url="https://github.com/vudiep411/grphpkg",
     long_description_content_type="text/markdown",
     packages=find_packages(),
