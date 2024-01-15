@@ -10,7 +10,7 @@ LONG_DESCRIPTION = """
 setup(
     name="grphpkg",
     version=VERSION,
-    author="NeuralNine (Florian Dedov)",
+    author="Vu Diep",
     author_email="vudiep411@gmail.com",
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
@@ -21,5 +21,6 @@ setup(
         "networkx",
         "matplotlib"
     ],
-    keywords=['python', 'data structure', 'graph', 'visulization'],
+    keywords=['python', 'data structure', 'graph', 'visualization'],
 )
+
