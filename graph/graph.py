@@ -4,7 +4,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 class Graph:
-    def __init__(self, representation, adj_list=False):
+    def __init__(self, representation=None, adj_list=False):
         self.graph = defaultdict(set)
         self.__construct_graph(representation, adj_list)
     
@@ -16,8 +16,7 @@ class Graph:
             else:
                 # Adjacency List
                 self.__construct_graph_from_list(representation)
-        else:
-            raise ValueError("Invalid representation type. Please provide a 2D list (matrix) or a list (adjacency list).")
+
         
     def __construct_graph_from_matrix(self, matrix):
         rows = len(matrix)
@@ -48,6 +47,9 @@ class Graph:
         * callback: Your custom function to perform your operation
         on each node
         """
+        if start not in self.graph:
+            raise ValueError(f"Start vertex {start} is not in the graph.")
+        
         visited = set()
         queue = deque([start])
         while queue:
@@ -64,6 +66,8 @@ class Graph:
         * callback: Your custom function to perform your operation 
         on each node
         """
+        if start not in self.graph:
+            raise ValueError(f"Start vertex {start} is not in the graph.")
         visited = set()
         def dfs_recursive(vertex):
             visited.add(vertex)
