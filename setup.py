@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 DESCRIPTION = 'Graph package'
 LONG_DESCRIPTION = """
  grphpkg is a simple graph library that has DFS and BFS
