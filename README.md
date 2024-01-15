@@ -1,4 +1,4 @@
-# grphpkg (Still in progress not published)
+# grphpkg
 **grphpkg** is a simple graph library that has DFS and BFS implemented that you can create your own operation.
 
 ## Graph
