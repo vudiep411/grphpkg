@@ -3,7 +3,7 @@
 
 ## Graph
 ```python
-import Graph
+from grphpkg import Graph
 matrix_representation = [
     [0, 1, 0, 1, 0, 0, 0, 0, 1],
     [1, 0, 1, 0, 0, 1, 0, 0, 0],
@@ -23,7 +23,7 @@ g.draw_graph()                                      # Graph visualization
 ```
 > Create your callback function and pass it in dfs or bfs to execute your operation
 ## Weighted Graph
-import WeightedGraph
+from grphpkg import Graph
 ```python
 matrix = [
     [0, 2, 3, float('inf')],
