@@ -31,17 +31,17 @@ matrix_representation = [
 # g2.add_edge(0, 1)
 # g2.print_graph()
 
-# matrix = [
-#     [0, 2, 3, float('inf')],
-#     [2, 0, 1, 4],
-#     [3, 1, 0, 5],
-#     [float('inf'), 4, 5, 0]
-# ]
+matrix = [
+    [0, 2, 3, float('inf')],
+    [2, 0, 1, 4],
+    [3, 1, 0, 5],
+    [float('inf'), 4, 5, 0]
+]
 
-# weighted_graph = WeightedGraph(matrix)
-# weighted_graph.print_graph()
-# print(weighted_graph.prim_mst(0))
+weighted_graph = WeightedGraph(matrix)
+weighted_graph.print_graph()
+print(weighted_graph.prim_mst(0))
+weighted_graph.draw_graph()
 
-g = WeightedGraph()
-print(g.prim_mst(0))
+
 
